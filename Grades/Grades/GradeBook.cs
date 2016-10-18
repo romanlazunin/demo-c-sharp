@@ -13,11 +13,19 @@ namespace Grades
             grades = new List<float>();
         }
 
+        public GradeStatistics ComputeStatistics()
+        {
+            return new GradeStatistics();
+        }
+
         public void AddGrade(float grade)
         {
             grades.Add(grade);
         }
 
-        List<float> grades;
+        private List<float> grades;
+
+        public static float MinimumGrade = 0;
+        public static float MaximumGrade = 100;
     }
 }
