@@ -15,7 +15,17 @@ namespace Grades
 
         public GradeStatistics ComputeStatistics()
         {
-            return new GradeStatistics();
+            var stats = new GradeStatistics();
+            stats.HighestGrade = 0;
+
+            var sum = 0f;
+            foreach (var grade in grades)
+            {
+                sum += grade;
+            }
+            stats.AverageGrade = sum / grades.Count;
+
+            return stats;
         }
 
         public void AddGrade(float grade)
